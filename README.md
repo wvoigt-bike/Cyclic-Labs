@@ -3,7 +3,7 @@
 **Design a custom titanium bike frame, see it in 3D, lay it over the bike you ride now,
 and check it the way a framebuilder would — all offline, in your browser.**
 
-Built to help people ordering a custom Ti frame (for example from Waltly) make sense of the
+Built to help people ordering a custom frame make sense of the
 geometry, the drawing they get back, and the tube choices before they sign off.
 
 ![3D view](system/readme/bike3d.jpg)
