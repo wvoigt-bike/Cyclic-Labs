@@ -1,0 +1,43 @@
+CYCLIC LABS - SIMULATION DISCLAIMER
+===================================
+
+Please read this before using the strength simulation (the "Strength (FEA)"
+tab: stress, strain, fatigue life, ISO 4210 lab tests, stiffness, comfort,
+weld joints and the CalculiX check).
+
+IT'S A SIMULATION, NOT AN APPROVAL
+  Cyclic Labs is an independent hobby tool for sketching and comparing bike
+  frame designs. Its strength results are rough estimates from a simplified
+  computer model. They are NOT engineering advice, a design approval or a
+  safety certification.
+
+THERE MAY BE MISTAKES
+  The results can be wrong: there may be bugs in the software, the physics is
+  simplified, and the material strength, weld quality, riding loads and crash
+  forces are all assumptions. Numbers typed in, imported or read off a drawing
+  by the scanner can be wrong too. The tool has not been checked by a licensed
+  engineer or proven against real lab tests of your frame.
+
+A PASS DOESN'T MEAN SAFE, AND A FAIL DOESN'T MEAN UNSAFE
+  Only a real frame on a real test rig passes or fails ISO 4210. Use the
+  numbers to compare one design with another and to come up with questions,
+  not as verdicts.
+
+ALWAYS ASK YOUR FRAME BUILDER OR A QUALIFIED FRAME DESIGNER
+  Have them review and approve every design before it is made, and follow
+  their advice over anything Cyclic Labs says. Your frame builder is
+  responsible for the final design, materials, welding and testing.
+
+DON'T RELY ON IT FOR SAFETY DECISIONS
+  For example whether a frame is safe to ride, how much weight it can carry,
+  or whether a damaged, modified or repaired frame is OK to use.
+
+NO WARRANTY, USE AT YOUR OWN RISK
+  Cyclic Labs is provided "as is", without warranty of any kind, express or
+  implied. To the fullest extent the law allows, the people who made or
+  shared it accept no liability for any damage, injury or loss from using it
+  or relying on its results.
+
+RIDING IS RISKY
+  Cycling, especially off-road, jumps and drops, can cause serious injury.
+  Inspect your frame often, and stop riding it if you find a crack or damage.

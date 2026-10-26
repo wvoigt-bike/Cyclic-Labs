@@ -1,0 +1,36 @@
+CYCLIC LABS - LICENCE AND THIRD-PARTY NOTICES
+=============================================
+
+CYCLIC LABS ITSELF
+  Cyclic Labs is free software: you can redistribute it and/or modify it under
+  the terms of the GNU General Public License version 3 (see LICENSE).
+  It is provided "as is", without warranty of any kind. It is a design and
+  comparison tool, NOT an engineering certification: its stress, fatigue and
+  lab-test numbers are estimates from a simplified model. Never use it as the
+  only reason to trust a frame. Your frame builder is responsible for the
+  frame's design, materials, welding and testing. See DISCLAIMER.txt.
+
+SOFTWARE INCLUDED WITH CYCLIC LABS
+  Each keeps its own licence; the licence texts are in system/licences.
+
+  PDF.js (Mozilla) - app/vendor/pdf.js, pdf.worker.js
+    Reads PDF drawings in the drawing scanner. Apache License 2.0.
+
+  Tesseract.js / Tesseract OCR with English language data - app/vendor/
+    tesseract-core.js, ocr-eng.js. Reads the text on scanned drawings.
+    Apache License 2.0.
+
+SOFTWARE NOT INCLUDED
+  CalculiX (GNU GPL v2 or later, Guido Dhondt, https://www.dhondt.de).
+  Cyclic Labs can run it if you download it yourself (see
+  system/solver/PUT CALCULIX HERE.txt); no CalculiX files are included.
+
+  Geometry import: the BikeCAD (.bcad) field names were taken from public
+  documentation of the format (the open-source BikeCAD2FreeCAD parser and the
+  MIT BIKED dataset's parameter list); no code from them is included.
+  BikeCAD is a trademark of its owner; Cyclic Labs is not affiliated with it.
+
+TRADEMARKS
+  Waltly, Fox, SRAM, Shimano and other brand and part names are used only to
+  describe sizes, parts and drawing formats. Cyclic Labs is an independent
+  hobby project and is not made by or affiliated with any of these companies.

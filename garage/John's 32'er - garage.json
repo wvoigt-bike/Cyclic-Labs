@@ -1,0 +1,250 @@
+{
+  "frameBenchGarage": 1,
+  "exported": "2026-10-24",
+  "bikes": [
+    {
+      "name": "John's 32'er",
+      "notes": "John's 32-inch drop-bar bike, from the Big Block Bikes build sheet (Initial design, 2026-10-24). Frame as drawn: reach 447, stack 686, head 71°, seat 74°, BB drop 95, rear centre 470 and front centre 714 (horizontal; chainstay 479.5 along the stay), trail 74, standover 924, 32\" wheel Ø798. Fork: not named on the sheet; 444 a2c / 60 offset (the usual 32\" carbon fork) is what makes the drawing's front centre 714 and trail 74 come out, with a 201.7 head tube and an IS52 zero-stack lower. Head tube length, seat tube 620 / top tube at 600, tube sizes, frame material (modelled as 3Al-2.5V Ti) and finish (raw brushed) are not on the sheet: read off the drawing or assumed. Fit from sheet 2: saddle height 848, setback 101 (to the saddle nose), 80 mm stem at 6°, 10 mm spacer, bar reach 75 / drop 100, effective stack 742 / effective reach 512. Build: SRAM Rival AXS E1 levers, GX T-Type Eagle AXS rear + XS-1275 10-52, Force 175 DUB Wide, SRAM 8-bolt 107 BCD power-meter spider + Wolf Tooth Aero 46T, Cane Creek Hellbender 70 T47i, Berd Sparrow50 Gold 32 (I9 hubs), Maxxis Aspen ST 32 x 2.15, Paceline 160/160, Cane Creek HCR IS52 headset + HCR 80 stem, Ritchey Streem 42, Thomson 27.2 zero-offset post.",
+      "design": {
+        "geometry": {
+          "reach": 447,
+          "stack": 686,
+          "headAngle": 71,
+          "seatAngle": 74,
+          "bbDrop": 95,
+          "chainstay": 479.5,
+          "headTube": 201.7,
+          "seatTube": 620,
+          "ttAtSeatTube": 600,
+          "ttBelowHtTop": 35,
+          "dtAboveHtBottom": 30,
+          "ssBelowTt": 40,
+          "forkA2C": 444,
+          "forkOffset": 60,
+          "lowerCupStack": 0,
+          "saddleHeight": 848,
+          "saddleSetback": 50,
+          "saddleStack": 45,
+          "seatpostLength": 330,
+          "tireDiameter": 798,
+          "tireWidth": 55,
+          "tireDiameterFront": "",
+          "rimBSD": 686,
+          "rimBSDFront": "",
+          "bbShellWidth": 85.5,
+          "csSpacingAtBB": 60,
+          "csSpacingAtTire": 92,
+          "csWidestAt": 140,
+          "stayWidthAtDropout": 132,
+          "ssSpacingAtTop": 46,
+          "ssShape": "straight",
+          "ssClearance": 6,
+          "wishboneLength": "",
+          "csShape": "auto",
+          "csClearance": 6,
+          "ssBridge": false,
+          "ssBridgeAbove": 60,
+          "csYokeLength": 0,
+          "csYokeSpacing": 80,
+          "csRingTuck": "",
+          "csPlanDrive": "",
+          "csPlanNds": "",
+          "csDrivePlate": "",
+          "csDrivePlateW": 6,
+          "csDrivePlateH": 25.5,
+          "stBendOffset": 0,
+          "stBendHeight": 150,
+          "stBendRadius": "",
+          "dtBendAngle": 0,
+          "dtBendFromHt": 120,
+          "dtBendRadius": "",
+          "ssBendStyle": "none",
+          "ssBendDepth": 0,
+          "ssBendAt": 150,
+          "csBendStyle": "none",
+          "csBendDepth": 0,
+          "csBendAt": 130,
+          "singlespeed": false,
+          "chainline": 47.5,
+          "chainring": 46,
+          "cog": 21,
+          "crankLength": 175,
+          "footOffset": 100,
+          "rearRotor": 160,
+          "brakeMount": "chainstay",
+          "dtBoss": 230,
+          "stBoss": 145,
+          "bossSpacing": 64,
+          "dtBottle": "std-21",
+          "stBottle": "std-21",
+          "dtCage": "standard",
+          "stCage": "standard",
+          "dtCageSlide": 0,
+          "stCageSlide": 0,
+          "cageBelowBolt": ""
+        },
+        "parts": {
+          "headBadge": "",
+          "fork": "rigid",
+          "dropper": "rigidPost",
+          "tyreWidth": 55,
+          "rimDepth": 50,
+          "rotorF": 160,
+          "rotorR": 160,
+          "stemLength": 80,
+          "stemRise": -6,
+          "spacers": 10,
+          "barType": "drop",
+          "barWidth": 420,
+          "barRise": 20,
+          "backsweep": 8,
+          "crankAngle": 25,
+          "sel": {
+            "fork": "j32-fork-444-60",
+            "crankset": "j32-force-175",
+            "chainring": "j32-wolftooth-aero-46",
+            "rear": "j32-eagle-ttype-1052",
+            "wheels": "j32-berd-sparrow50-32",
+            "tyres": "j32-maxxis-aspen-st-32",
+            "brakes": "j32-rival-axs-e1",
+            "cockpit": "j32-hcr-80-streem-42",
+            "seatpost": "j32-thomson-272-0",
+            "saddle": "sa-classic",
+            "pedals": "pe-clip"
+          },
+          "finish": "raw",
+          "welds": "dimes",
+          "headLogo": "",
+          "dtLogo": "",
+          "smallColor": "black"
+        },
+        "fit": {
+          "shoeEU": 43,
+          "shoeSys": "eu",
+          "shoeType": "auto",
+          "wide": false,
+          "cleatBack": 0,
+          "fender": "none",
+          "fenderGap": 12,
+          "footCentre": "",
+          "toeAngle": 0,
+          "footPitch": 5,
+          "toeReach": ""
+        },
+        "tubes": {
+          "topTube": {
+            "od": 31.8,
+            "wall": 0.9
+          },
+          "downTube": {
+            "od": 42,
+            "wall": 1.0
+          },
+          "seatTube": {
+            "od": 31.8,
+            "wall": 0.9
+          },
+          "headTube": {
+            "od": 56,
+            "wall": 2.0
+          },
+          "chainstay": {
+            "od": 22.2,
+            "wall": 0.9,
+            "ovalH": 25.5,
+            "ovalW": 18.5,
+            "ovalLength": 110,
+            "taperOD": 19,
+            "taperLength": 180
+          },
+          "seatStay": {
+            "od": 16,
+            "wall": 0.9
+          },
+          "csYoke": {
+            "h": 32,
+            "w": 10,
+            "wall": 5
+          },
+          "ssBridge": {
+            "od": 12.7,
+            "wall": 0.9
+          },
+          "ssMono": {
+            "od": 25,
+            "wall": 1
+          },
+          "bbShell": {
+            "od": 52,
+            "wall": 2.4
+          },
+          "seatpost": {
+            "type": "alloy272",
+            "od": 27.2,
+            "wall": 1.8
+          }
+        },
+        "material": {
+          "name": "Titanium 3Al-2.5V (cold-worked)",
+          "E": 100000,
+          "nu": 0.32,
+          "density": 4.48,
+          "yield": 725,
+          "uts": 860,
+          "jointYield": 500,
+          "jointUts": 620,
+          "weldFatigue": 85,
+          "fatigueMethod": "calibrated",
+          "hotSpotFATfe": 615,
+          "hotSpotFAT": 116,
+          "minSCF": 2,
+          "bodyFatigue": 280
+        },
+        "rider": {
+          "riderKg": 77,
+          "bikeKg": 12
+        },
+        "loads": {
+          "seatedFactor": 2,
+          "frontBrakeG": 1,
+          "rearBrakeG": 0.5
+        },
+        "use": {
+          "condition": 2,
+          "isoType": "racing",
+          "isoSeverity": 1,
+          "sprintWatts": 2000,
+          "sprintCadence": 90,
+          "avgWatts": 200,
+          "avgCadence": 75,
+          "hoursPerWeek": 5,
+          "rearTirePsi": 28,
+          "aggression": 1,
+          "dropHeight": "",
+          "legStroke": 250,
+          "tireSquish": 15,
+          "forkTravel": 0,
+          "forkSag": 25,
+          "isoForkTravel": 140
+        }
+      },
+      "garage": {
+        "brand": "Big Block Bikes",
+        "model": "Custom 32\" drop-bar (build sheet, rev A)",
+        "year": "2026",
+        "size": "Custom, 447 reach / 686 stack / 71° head",
+        "kind": "gravel",
+        "status": "rode",
+        "ref": false,
+        "added": "2026-10-24",
+        "parts": "Fork not on the sheet (444 / 60 assumed) · SRAM Rival AXS E1 hydraulic levers · GX T-Type Eagle AXS 12-speed, XS-1275 10-52 black · Force 175 DUB Wide · SRAM 8-bolt 107 BCD spider power meter + Wolf Tooth Aero 107 BCD 46T black · Cane Creek Hellbender 70 T47i DUB black · GX T-Type Eagle silver 126 links · Berd Sparrow50 Gold 32 with I9 hubs · Maxxis Aspen ST 32 x 2.15 tubeless · SRAM Paceline 160/160 · Cane Creek HCR IS52 headset, HCR 80 stem, computer mount · Ritchey Streem 42 cm, Zipp Service Course CX black tape · Thomson 27.2 x 330 zero-offset silver · King Cage SS x2 · saddle, pedals, head unit: John's own",
+        "like": "",
+        "change": "",
+        "fit": {
+          "reach": null,
+          "drop": null
+        }
+      }
+    }
+  ]
+}

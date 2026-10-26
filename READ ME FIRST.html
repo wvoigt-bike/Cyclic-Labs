@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyclic Labs – read me first</title>
+<style>
+:root { --bg:#eef0f3; --panel:#fff; --ink:#1b2330; --muted:#5d6878; --line:#d5dae2; --accent:#6a3fb5; --soft:#efe9f8; --ok:#2f7d5b; --warn:#9a6312; --warnbg:#fbf3e3; --code:#f4f5f8; }
+@media (prefers-color-scheme: dark) { :root { --bg:#14171d; --panel:#1c2029; --ink:#e6e9ef; --muted:#98a2b3; --line:#2e3442; --accent:#a987e8; --soft:#2a2340; --ok:#5cc496; --warn:#e8b04a; --warnbg:#2e2718; --code:#252a35; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 "Segoe UI", system-ui, -apple-system, sans-serif; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 32px 16px 80px; }
+header { margin-bottom: 26px; }
+header h1 { font-size: 34px; margin: 0; letter-spacing: -0.5px; } header h1 span { color: var(--accent); }
+header p { color: var(--muted); margin: 6px 0 0; font-size: 17px; }
+.ver { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent); background: var(--soft); border-radius: 99px; padding: 2px 10px; margin-left: 8px; vertical-align: middle; }
+nav { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin-bottom: 26px; font-size: 15px; }
+nav b { display: block; margin-bottom: 4px; } nav a { color: var(--accent); text-decoration: none; margin-right: 14px; line-height: 2; display: inline-block; } nav a:hover { text-decoration: underline; }
+section { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 22px 26px; margin-bottom: 20px; }
+h2 { margin: 0 0 12px; font-size: 23px; } h3 { margin: 22px 0 6px; font-size: 18px; }
+p { margin: 8px 0; } ul, ol { padding-left: 22px; margin: 8px 0; } li { margin: 4px 0; }
+.steps { counter-reset: s; list-style: none; padding: 0; }
+.steps > li { counter-increment: s; position: relative; padding: 2px 0 14px 48px; margin: 0; }
+.steps > li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #fff; font-weight: 700; display: grid; place-items: center; }
+.steps > li b.t { display: block; font-size: 17px; }
+.file { font-weight: 600; background: var(--code); border: 1px solid var(--line); border-radius: 5px; padding: 0 6px; white-space: nowrap; }
+code { background: var(--code); border-radius: 4px; padding: 1px 5px; font-size: 14px; }
+.note { background: var(--warnbg); border-left: 4px solid var(--warn); border-radius: 6px; padding: 10px 14px; margin: 12px 0; }
+.good { background: var(--soft); border-left: 4px solid var(--accent); border-radius: 6px; padding: 10px 14px; margin: 12px 0; }
+figure { margin: 14px 0; } figure img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; display: block; }
+figcaption { font-size: 14px; color: var(--muted); margin-top: 4px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; } @media (max-width: 720px) { .two { grid-template-columns: 1fr; } section { padding: 18px 16px; } td .file { white-space: normal; } td:first-child { width: 42%; } table { word-break: break-word; } }
+table { border-collapse: collapse; width: 100%; font-size: 15px; } td, th { border-top: 1px solid var(--line); padding: 8px 10px 8px 0; text-align: left; vertical-align: top; } th { color: var(--muted); font-weight: 600; }
+td:first-child { width: 38%; font-weight: 600; }
+.feat { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 10px; }
+.feat div { border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; } .feat b { display: block; }
+.feat span { color: var(--muted); font-size: 14.5px; }
+pre { background: var(--code); border-radius: 6px; padding: 10px 14px; font-size: 14px; overflow-x: auto; }
+footer { color: var(--muted); font-size: 14px; text-align: center; margin-top: 30px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Cyclic <span>Labs</span> <span class="ver">version 10.20 · October 2026</span></h1>
+  <p>Design a custom titanium bike frame, see it in 3D, lay one bike over another, and check it the way a framebuilder would.</p>
+</header>
+
+<nav><b>On this page</b>
+  <a href="#install">Install (3 steps)</a><a href="#calculix">The CalculiX solver</a><a href="#start">Your first 10 minutes</a><a href="#features">What it can do</a>
+  <a href="#saving">Where your bikes are saved</a><a href="#update">Updating &amp; removing</a><a href="#trouble">Troubleshooting</a><a href="#limits">What the numbers mean</a><a href="#folder">What's in the folder</a>
+</nav>
+
+<section>
+  <h2>What you need</h2>
+  <ul>
+    <li><b>A Windows 10 or 11 PC</b> for everything, including the CalculiX engineering check. (On a Mac or Linux computer, everything except the CalculiX check works: see <a href="#mac">Mac &amp; Linux</a>.)</li>
+    <li><b>A web browser:</b> Chrome, Edge or Firefox. Cyclic Labs runs <i>in</i> your browser but entirely on your computer: no internet, no account, nothing uploaded.</li>
+    <li><b>About 25 MB</b> of disk space. No administrator rights. Nothing gets installed into Windows.</li>
+  </ul>
+</section>
+
+<section id="install">
+  <h2>Install in 3 steps</h2>
+  <ol class="steps">
+    <li><b class="t">Download the zip</b>
+      Download the latest <span class="file">Cyclic-Labs</span> zip from the project's <b>Releases</b> page on GitHub (or <b>Code → Download ZIP</b>) to your computer (for example your Downloads folder).</li>
+    <li><b class="t">Extract it (important)</b>
+      Right-click the zip → <b>Extract All…</b> → pick where to keep it (Documents is a good place) → <b>Extract</b>.
+      You get a folder called <span class="file">Cyclic Labs</span>.
+      <div class="note">Don't run anything from <i>inside</i> the zip (double-clicking into a zip only shows a preview). If you do, Cyclic Labs tells you it can't find its files: extract first.</div></li>
+    <li><b class="t">Start it</b>
+      Open the <span class="file">Cyclic Labs</span> folder and double-click <span class="file">Start Cyclic Labs</span>.
+      <ul>
+        <li>A small window titled <b>Cyclic Labs</b> opens. <b>Leave it open</b> while you use Cyclic Labs: it's the local helper that runs the CalculiX solver. Close it when you're done.</li>
+        <li>Cyclic Labs opens in your browser at <code>http://localhost:8765</code>. (localhost means "this computer": nothing goes online.)</li>
+        <li>The first time, a short walkthrough helps you set up your first bike.</li>
+      </ul></li>
+  </ol>
+  <h3>The first time only: Windows may ask if you trust it</h3>
+  <p>Files downloaded from the internet get a safety check. You may see one of these. Both are normal for small free programs that aren't from a big software company:</p>
+  <ul>
+    <li><b>"Windows protected your PC"</b> (blue box): click <b>More info</b>, then <b>Run anyway</b>.</li>
+    <li><b>"Open File – Security Warning: The publisher could not be verified"</b>: click <b>Run</b>. (Untick "Always ask before opening this file" to stop it asking.)</li>
+  </ul>
+  <p>On its first start, the helper also clears that "downloaded" mark from Cyclic Labs' own files, so the solver can start. It doesn't touch anything else on your computer.</p>
+  <div class="good"><b>Tip: put it on your desktop.</b> Right-click <span class="file">Start Cyclic Labs</span> → <b>Show more options</b> (Windows 11) → <b>Send to</b> → <b>Desktop (create shortcut)</b>.</div>
+  <h3 id="mac">Mac &amp; Linux</h3>
+  <p>Extract the zip and double-click <span class="file">Open on Mac or Linux.html</span> (or <span class="file">app/index.html</span>). Everything works (design, 3D, overlay, parts, drawing scanner, checks, stress, fatigue and lab-test estimates) except the <b>CalculiX check</b> card, which needs the Windows helper.</p>
+</section>
+
+<section id="calculix">
+  <h2>The CalculiX solver (the engineering software)</h2>
+  <p><b>CalculiX</b> is a free, professional finite-element (FEA) solver: the kind of engineering software used to check parts for stress. Cyclic Labs uses it in <b>Design + Engineering</b> mode to double-check its own quick frame model and to build detailed 3D models of the weld joints.</p>
+  <div class="good"><b>It's optional, and not included.</b> Everything except the CalculiX check and 3D weld models works without it. To add it (Windows): download <code>calculix_2.23_4win.zip</code> from <b>www.dhondt.de</b> (the CalculiX author's site), right-click it → <b>Extract All…</b> into the <span class="file">system\solver</span> folder, then start Cyclic Labs again. "Start Cyclic Labs" finds it automatically.</div>
+  <h3>Check that it's working</h3>
+  <ol>
+    <li>Start Cyclic Labs with <span class="file">Start Cyclic Labs</span>. The helper window should say <code>CalculiX solver: …\system\solver\…\ccx_2.23.exe</code>.</li>
+    <li>In Cyclic Labs, click <b>Design + Engineering</b> (top right) and scroll to the <b>CalculiX check</b> card. It should name the solver it found.</li>
+    <li>Click <b>Run CalculiX check</b>. After a few seconds a table appears comparing CalculiX with Cyclic Labs' quick model. If you get the table, CalculiX is working.</li>
+  </ol>
+  <p>"3D weld models (every joint)" in the same card builds a solid model of each weld and takes a few minutes per joint. Leave the page open while it runs.</p>
+  <h3>If the card says the solver isn't available</h3>
+  <table>
+    <tr><th>The card says…</th><th>What to do</th></tr>
+    <tr><td>"To use CalculiX, start Cyclic Labs with Start Cyclic Labs…"</td><td>You opened the page directly (for example from <span class="file">app\index.html</span>). Close it and use <span class="file">Start Cyclic Labs</span>.</td></tr>
+    <tr><td>"The Cyclic Labs helper window isn't running"</td><td>The black/blue Cyclic Labs window was closed. Double-click <span class="file">Start Cyclic Labs</span> again.</td></tr>
+    <tr><td>"CalculiX solver not found"</td><td>CalculiX isn't in <span class="file">system\solver</span> yet (see above), or antivirus quarantined it. Extract the CalculiX zip there again.</td></tr>
+  </table>
+  <p>Already have CalculiX installed somewhere else? Make a text file called <span class="file">ccx_path.txt</span> next to <span class="file">Start Cyclic Labs</span> containing one line, the full path to the ccx program, for example:</p>
+  <pre>C:\CalculiX\ccx_2.23.exe</pre>
+  </section>
+
+<section id="start">
+  <h2>Your first 10 minutes</h2>
+  <ol>
+    <li><b>Walkthrough.</b> The first time, pick road / gravel / mountain, the wheel size, then either a typical size (S–XL), your own numbers, a brand's geometry chart (copy and paste it from their website), a BikeCAD file, or a scan of a builder's drawing. Add your weight and shoe size and Cyclic Labs builds a starting bike. You can re-run it any time with <b>+ New bike</b>.</li>
+    <li><b>Look around.</b> There's also a ready-made <b>Example – Ti 29er singlespeed hardtail</b> in the Design list. Drag the 3D bike to turn it; scroll to zoom.</li>
+    <li><b>Change a number.</b> Everything on the left (reach, stack, head angle, chainstay, tube sizes…) updates the bike and every check as you type. <b>Undo edits</b> puts it back.</li>
+    <li><b>Or just type it.</b> Click <b>Design chat</b> and write things like <i>make the reach 460</i>, <i>use a 140 mm fork</i>, <i>head angle 1° slacker</i>, <i>shoe size 11 US</i>, <i>what's the trail?</i>, <i>undo</i>.</li>
+    <li><b>Save.</b> <b>Save as new</b> keeps a copy so you can compare versions (<b>Compare with</b>, top right of the page). <b>Export file</b> saves it as a file you can keep, email, or send to your builder.</li>
+    <li><b>Take the tour.</b> <b>Tutorial</b> (top right) walks through every panel, and has a step-by-step "refine my bike" guide.</li>
+  </ol>
+  <figure><img src="system/readme/walkthrough.jpg" alt="The new-bike walkthrough asking what kind of bike"><figcaption>The new-bike walkthrough.</figcaption></figure>
+</section>
+
+<section id="features">
+  <h2>What it can do</h2>
+  <figure><img src="system/readme/bike3d.jpg" alt="Realistic 3D view of a titanium hardtail"><figcaption>Realistic 3D view with real-world parts. Pick the fork, cranks, wheels, tyres, brakes, cockpit, seatpost, saddle and pedals under <b>Build my bike</b>, or add your own parts.</figcaption></figure>
+  <figure><img src="system/readme/overlay.jpg" alt="A gravel bike shown see-through over a mountain bike"><figcaption><b>Overlay a bike</b>: draw any other design (or your current bike, typed in or pasted from its geometry chart) over this one, see-through or solid, lined up at the bottom brackets, axles, or contact points. The numbers table lists every difference in mm.</figcaption></figure>
+  <div class="feat">
+    <div><b>Geometry &amp; fit</b><span>Reach, stack, angles, trail, wheelbase, BB height, effective top tube, mixed wheel sizes (mullet), 26" to 32" wheels.</span></div>
+    <div><b>Builder checklist</b><span>Tyre and chainring clearance, pedal clearance, seatpost fit and insertion, dropper fit, tube sizes and small parts, each with the rule it comes from.</span></div>
+    <div><b>Toe overlap</b><span>Your shoe size (EU/US/UK, up to XXXL feet), shoe type, cleat position and mudguards: how far you can turn the bars before your toe touches the tyre.</span></div>
+    <div><b>Scan a drawing</b><span>Read a builder's frame drawing (PDF, picture or phone photo) into a new design, then check the numbers on a review screen.</span></div>
+    <div><b>Imports</b><span>BikeCAD (.bcad) files and geometry charts pasted from any brand's website.</span></div>
+    <div><b>Tubes &amp; stays</b><span>Diameter and wall of every tube, butted ends, standard Ti tube shapes, bent or wishbone seat stays, chainstay yoke, bridge.</span></div>
+  </div>
+  <h3>The Strength (FEA) tab</h3>
+  <p>In step 2 (Design), the column beside the bike has two tabs: <b>Design</b> and <b>Strength (FEA)</b>. Open the Strength tab and click <b>Turn on the strength simulation</b> to add the stress side (also under Help). You'll be asked to read and accept a short disclaimer first. It runs in the background either way; this just shows it.</p>
+  <div class="note"><b>Simulation only. It may contain mistakes.</b> The strength results are rough estimates from a simplified model, not an engineering approval or a safety certification. Always have your frame builder or a qualified frame designer review and approve the design. See <span class="file">DISCLAIMER.txt</span>.</div>
+  <div class="good"><b>These are estimates, for comparing designs.</b> Your builder has the final say: they run their own analysis and know their frames, so a red or amber number here is a question to ask them, not a reason to drop a design. Want more margin anyway? Ask for bigger or thicker tubing; builders will usually do it.</div>
+  <figure><img src="system/readme/engineering.jpg" alt="Engineering results: stiffness, comfort, weight, fatigue life, landing limit"><figcaption>Headline results: pedalling and steering stiffness, seated comfort, tube weight, fatigue life, and the flat-landing height where a weld starts to yield.</figcaption></figure>
+  <div class="two">
+    <figure><img src="system/readme/labtests.jpg" alt="ISO 4210-6 lab test table"><figcaption>The ISO 4210-6 frame lab tests bike brands certify to, estimated for this frame.</figcaption></figure>
+    <figure><img src="system/readme/toe.jpg" alt="Toe overlap card"><figcaption>Toe overlap with a turn-the-bars slider and a shoe-size × crank-length table.</figcaption></figure>
+  </div>
+  <ul>
+    <li><b>Stress colours &amp; animations</b>: the frame coloured by how hard each part works for each riding load (sprints, braking, rock hits, huck to flat, landing on the front), with flex shown.</li>
+    <li><b>Riding you set</b>: terrain (road to bike park), riding style, sprint power, hours per week, biggest drop, fork travel.</li>
+    <li><b>Fatigue life &amp; abuse</b>: a rough estimate of weld fatigue life for that riding, and what wears them most. Best for comparing designs.</li>
+    <li><b>Comfort explorer</b>: try one change at a time, or let the optimiser find the plushest frame that still meets the rules you set.</li>
+    <li><b>CalculiX check and 3D weld models</b>: see <a href="#calculix">above</a>.</li>
+  </ul>
+</section>
+
+<section id="saving">
+  <h2>Where your bikes are saved (read this once)</h2>
+  <p>Cyclic Labs keeps your saved designs and parts <b>inside your web browser</b> on this computer, not in the Cyclic Labs folder. That means:</p>
+  <ul>
+    <li><b>Always open it the same way</b> (with <span class="file">Start Cyclic Labs</span>) <b>in the same browser</b>. Designs saved in Chrome don't show in Edge, and designs saved with "Start Cyclic Labs" don't show in the "(no CalculiX)" version.</li>
+    <li><b>Back up with Export file.</b> It saves the open design as a <code>.json</code> file. <b>Import file</b> brings it back on any computer or browser, and that's also how you share a design with a friend or your builder.</li>
+    <li><b>Clearing your browser's history / site data for localhost deletes saved designs.</b> Export the ones you care about first.</li>
+    <li>Parts you add yourself: <b>Build my bike → My parts library → Export my parts</b> saves them to a file too.</li>
+  </ul>
+</section>
+
+<section id="update">
+  <h2>Updating &amp; removing</h2>
+  <h3>Installing a newer version</h3>
+  <ol>
+    <li>Close the Cyclic Labs helper window.</li>
+    <li>(Optional but wise) Export the designs you care about first.</li>
+    <li>Extract the new zip (it makes a new folder, e.g. <span class="file">Cyclic Labs 9.3</span>) and start it with its <span class="file">Start Cyclic Labs</span>. Your saved designs are still there, because they live in the browser at the same address.</li>
+    <li>Delete the old folder once you're happy (and update your desktop shortcut).</li>
+  </ol>
+  <h3>Removing Cyclic Labs</h3>
+  <p>Close the helper window and delete the folder. That's all: nothing was installed into Windows. (Saved designs stay in your browser's storage for <code>localhost:8765</code> until you clear that site's data.)</p>
+</section>
+
+<section id="trouble">
+  <h2>Troubleshooting</h2>
+  <table>
+    <tr><th>Problem</th><th>Fix</th></tr>
+    <tr><td>"Cyclic Labs can't find its files"</td><td>You're running it from inside the zip. Right-click the zip → Extract All, then use the extracted folder.</td></tr>
+    <tr><td>Double-clicking Start Cyclic Labs does nothing / the window flashes and closes</td><td>Some work computers block PowerShell. Use <span class="file">Start Cyclic Labs (no CalculiX)</span> instead: everything works except the CalculiX check card.</td></tr>
+    <tr><td>The browser doesn't open</td><td>Open your browser yourself and go to <code>http://localhost:8765</code> while the helper window is open.</td></tr>
+    <tr><td>"Could not start on port 8765"</td><td>Another program is using that address. Cyclic Labs opens without CalculiX instead. Restarting the computer usually frees it.</td></tr>
+    <tr><td>My saved designs are gone</td><td>Check you're in the same browser and used Start Cyclic Labs (not the "no CalculiX" file, and not a different browser). If the browser's data was cleared, import your exported files.</td></tr>
+    <tr><td>The 3D view is blank or very slow</td><td>Use an up-to-date Chrome or Edge, and make sure graphics acceleration is on (browser Settings → System → "Use graphics acceleration when available"). <b>Line drawing</b> is a lighter view.</td></tr>
+    <tr><td>Antivirus warns about the CalculiX .exe or .dll files</td><td>They're the free CalculiX solver you downloaded. You can allow them, or delete <span class="file">system\solver</span> and use Cyclic Labs without the CalculiX check.</td></tr>
+    <tr><td>The CalculiX check shows an error</td><td>Make sure the folder path has no unusual characters (plain letters, numbers, spaces are fine). Close and restart the helper window.</td></tr>
+  </table>
+</section>
+
+<section id="limits">
+  <h2>What the numbers mean (and don't)</h2>
+  <p>Cyclic Labs models each tube as a titanium beam with the sizes you enter, welded at the joints, with weld-zone strength and a welded-joint fatigue curve. It is very good at <b>comparing</b> designs: "is B stiffer, lighter, longer-lasting than A, and by how much?"</p>
+  <div class="note"><b>It is not an engineering certification.</b> Stress, fatigue-life and lab-test results are estimates from a simplified model. Fatigue years in particular depend on assumptions about how often big hits happen: use them to compare designs, not as a promise. The software may also contain bugs, and numbers typed in or scanned can be wrong. A pass here doesn't mean a frame is safe and a fail doesn't mean it's unsafe. Your frame builder is responsible for the final design, materials, welding and testing. Always have your builder or a qualified frame designer review the design, and confirm anything flagged against your builder's drawing. Don't use Cyclic Labs to decide whether a frame is safe to ride. Full text: <span class="file">DISCLAIMER.txt</span>.</div>
+  <p>The <b>How to read the results</b> box on the Strength (FEA) tab explains the method, and every checklist line says where its rule comes from.</p>
+</section>
+
+<section id="folder">
+  <h2>What's in the folder</h2>
+  <table>
+    <tr><td><span class="file">READ ME FIRST.html</span></td><td>This guide.</td></tr>
+    <tr><td><span class="file">DISCLAIMER.txt</span></td><td>What the strength simulation is and isn't. Please read it.</td></tr>
+    <tr><td><span class="file">Start Cyclic Labs</span></td><td>Starts Cyclic Labs with the CalculiX helper (Windows). Use this one.</td></tr>
+    <tr><td><span class="file">Start Cyclic Labs (no CalculiX)</span></td><td>Opens Cyclic Labs straight in the browser, without the helper.</td></tr>
+    <tr><td><span class="file">Open on Mac or Linux.html</span></td><td>Opens Cyclic Labs on a Mac or Linux computer.</td></tr>
+    <tr><td><span class="file">app</span></td><td>The program itself (a web page and its scripts). No need to open anything in here.</td></tr>
+    <tr><td><span class="file">system</span></td><td>The helper (<span class="file">CyclicLabs-Server.ps1</span>), the folder for CalculiX if you add it (<span class="file">solver</span>), licences, and this guide's pictures. CalculiX working files go in <span class="file">system\ccx_jobs</span>.</td></tr>
+  </table>
+</section>
+
+<section>
+  <h2>Credits &amp; licences</h2>
+  <p>Cyclic Labs is free software under the GNU GPL v3 (see <span class="file">LICENSE</span>), provided "as is" with no warranty of any kind; you use it at your own risk (see <span class="file">DISCLAIMER.txt</span>). It includes PDF.js (Mozilla) and Tesseract OCR (both Apache 2.0); CalculiX (GNU GPL, by Guido Dhondt) is not included. Details: <span class="file">THIRD-PARTY-NOTICES.txt</span> and <span class="file">system\licences</span>. Brand and part names are used only to describe parts; Cyclic Labs isn't affiliated with any of those companies.</p>
+  <p>Questions, ideas or problems? Open an issue on the project's GitHub page.</p>
+</section>
+
+<footer>Cyclic Labs 10.20 · October 2026</footer>
+</div>
+</body>
+</html>
